@@ -55,7 +55,7 @@ protocol ResultRenderable: Codable {
 extension ResultRenderable {
     func renderAsJSON() -> String {
         let jsonEncoder = JSONEncoder()
-        jsonEncoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        jsonEncoder.outputFormatting = [.sortedKeys]
         let json = try! jsonEncoder.encode(self) // swiftlint:disable:this force_try
         return String(data: json, encoding: .utf8)!
     }
